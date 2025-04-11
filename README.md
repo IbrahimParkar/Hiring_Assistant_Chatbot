@@ -139,4 +139,3 @@ Developed by **Ibrahim Parkar**
 ## 📄 License
 
 This project is for educational/demo purposes only and is not intended for commercial deployment without proper data privacy & security measures.
-```
