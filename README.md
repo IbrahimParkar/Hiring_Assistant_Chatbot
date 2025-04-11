@@ -47,7 +47,7 @@ streamlit run app.py
 ## Usage Guide
 
 1. Launch the chatbot via Streamlit.
-2. The chatbot will greet you and ask for essential details:
+2. The chatbot will greet the candidate and ask for essential details after they start the interview:
    - Full Name
    - Email Address
    - Phone Number
@@ -55,11 +55,11 @@ streamlit run app.py
    - Desired Position
    - Location
    - Tech Stack
-3. Based on the tech stack, the assistant will:
-   - Generate 3–5 technical questions dynamically using LLMs.
+3. After they accept the Privacy Notice. Based on thier Profile, the assistant will:
+   - Generate 4 technical questions using the LLM.
    - Allow the candidate to answer them.
-   - Log the entire interview history (optional: saved to CSV).
-4. End the conversation gracefully with closing remarks.
+   - Log the entire interview history in the Profiles folder in JSON format.
+4. End the conversation gracefully with closing remarks when.
 5. Optional: Restart or exit anytime by typing an end keyword like `exit` or `quit`.
 
 ---
@@ -69,7 +69,7 @@ streamlit run app.py
 - **Frontend:** Streamlit
 - **Language Model APIs:** Hugging Face Inference API (Falcon-7B-Instruct for QG, BART for Summarization)
 - **Libraries Used:**
-  - `streamlit`, `requests`, `dotenv`, `pandas`
+  - `streamlit`, `requests`, `dotenv`, `pandas`, `re`, `json`, `datetime`, `os`
 - **Architecture:**
   - Modular design with `utils.py`, `prompt.py`, and `app.py`
   - Prompts crafted for question generation, relevance checks, and fallback handling
@@ -90,7 +90,7 @@ Prompts are designed to guide the model effectively:
 3. **Follow-Up Questioning:**
    - Follows up using previous Q&A and full profile to generate deeper, contextual queries.
 4. **Fallback Relevance Checks:**
-   - If the input is irrelevant to the asked question, logic detects and prompts the user again.
+   - If the input is irrelevant to the asked question, logic detects and prompts the user to answer again.
 
 ---
 
@@ -120,7 +120,7 @@ TalentScout-Hiring-Assistant/
 ├── app.py                   # Main Streamlit app
 ├── prompt.py                # Prompt templates for LLM
 ├── utils.py                 # Helper functions (API calls, validation)
-├── interview_data.csv       # Interview history log (generated)
+├── Profiles                 # Interview history log (generated)
 ├── requirements.txt         # Python dependencies
 ├── .env                     # Hugging Face API key
 └── README.md                # Project documentation
