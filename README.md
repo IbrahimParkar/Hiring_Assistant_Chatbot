@@ -36,6 +36,13 @@ Create a `.env` file and add your Hugging Face API key:
 ```
 HUGGINGFACE_API_KEY=your_api_key_here
 ```
+#### 🔑 Don’t have an API key?
+
+1. Go to [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)  
+2. Click on “New token” and select the **Read** access role.  
+3. Copy the token and paste it into your `.env` file.
+
+> **Note:** For demo and educational use, you may temporarily use the public key provided by the developer in the code. This key runs on the Hugging Face free tier, which has usage limits. It will be updated or removed in the future to prevent overuse.
 
 ### 5. Run the Application
 ```bash
