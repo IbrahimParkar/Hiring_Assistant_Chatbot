@@ -2,7 +2,7 @@
 
 ## 🚀 Project Overview
 
-The **TalentScout AI Hiring Assistant** is an intelligent chatbot built for the initial screening of technology candidates. It simulates the role of a technical recruiter by collecting essential candidate details and generating technical questions based on the candidate’s tech stack. 
+The **Hiring_Assistant_Chatbot (TalentScout)** is an intelligent chatbot built to initially screen technology candidates. It simulates the role of a technical recruiter by collecting essential candidate details and generating technical questions based on the candidate’s tech stack. 
 
 This assistant aims to streamline the hiring process by offering:
 - Automated collection of candidate information.
@@ -16,8 +16,8 @@ This assistant aims to streamline the hiring process by offering:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/IbrahimParkar/TalentScout-Hiring-Assistant.git
-cd TalentScout-Hiring-Assistant
+git clone https://github.com/IbrahimParkar/Hiring_Assistant_Chatbot.git
+cd Hiring_Assistant_Chatbot
 ```
 
 ### 2. Create Virtual Environment (Optional but Recommended)
@@ -57,7 +57,7 @@ streamlit run app.py
    - Tech Stack
 3. Based on the tech stack, the assistant will:
    - Generate 3–5 technical questions dynamically using LLMs.
-   - Allow candidate to answer them.
+   - Allow the candidate to answer them.
    - Log the entire interview history (optional: saved to CSV).
 4. End the conversation gracefully with closing remarks.
 5. Optional: Restart or exit anytime by typing an end keyword like `exit` or `quit`.
@@ -74,7 +74,7 @@ streamlit run app.py
   - Modular design with `utils.py`, `prompt.py`, and `app.py`
   - Prompts crafted for question generation, relevance checks, and fallback handling
   - Context maintained across turns using Streamlit's session state
-- **Storage:** Candidate responses logged locally in `interview_data.csv`
+- **Storage:** Candidate responses are logged locally in the Profiles folder.
 
 ---
 
@@ -85,12 +85,12 @@ Prompts are designed to guide the model effectively:
 1. **Information Gathering:**
    - "What is your desired position?" → Stored for context.
 2. **Tech Stack-Based Question Generation:**
-   - Prompt instructs model to generate a question specifically for provided tech stack and experience.
+   - Prompt instructs model to generate a question specifically for the provided tech stack and experience.
    - E.g., “Generate a Python + Django technical question for a backend developer.”
 3. **Follow-Up Questioning:**
    - Follows up using previous Q&A and full profile to generate deeper, contextual queries.
 4. **Fallback Relevance Checks:**
-   - If input is irrelevant to the asked question, logic detects and prompts the user again.
+   - If the input is irrelevant to the asked question, logic detects and prompts the user again.
 
 ---
 
